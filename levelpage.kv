@@ -1,0 +1,33 @@
+<LevelPage>:
+    name: 'level_page'
+    Image:
+        source: 'assets/backgrounds/taman1.jpg' 
+        allow_stretch: True
+        keep_ratio: False
+    Image:
+        source: 'assets/icons/level.png'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.7}   
+        height: 1000
+        allow_stretch: False
+        keep_ratio: True
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 100      
+        size_hint: 0.6, 0.2
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}    
+        Button:
+            height: 800
+            allow_stretch: False
+            keep_ratio: True
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+            background_normal: 'assets/buttons/level/mudah.png'  
+            border: [0, 0, 0, 0] 
+            on_press: app.root.current = 'game_page'
+        Button:
+            height: 800
+            allow_stretch: False
+            keep_ratio: True
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+            background_normal: 'assets/buttons/level/sulit.png'  
+            border: [1, 1, 1, 1] 
+            on_press: app.root.current = 'game_page'

@@ -1,0 +1,62 @@
+<GamePage>:
+    name: 'game_page'
+    valign: 'center'
+    Image:
+        source: 'assets/backgrounds/taman3.jpg' 
+        allow_stretch: True
+        keep_ratio: False
+    Image:
+        source: 'assets/icons/title_box.png'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.9}   
+        height: 300
+        allow_stretch: False
+        keep_ratio: True      
+    Image:
+        source: 'db/transportasi/mobil.png'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}   
+        height: 100
+        allow_stretch: False
+        keep_ratio: True          
+    BoxLayout:
+        id: answer_container
+        orientation: 'horizontal'
+        spacing: 30
+        size_hint: 0.9, 0.2
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+    BoxLayout:
+        id: option_container
+        orientation: 'horizontal'
+        spacing: 30
+        size_hint: 0.9, 0.2
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}           
+        
+
+
+<AnswerBox>:
+    orientation: 'horizontal'
+    size_hint: None, None
+    width: 150
+    height: 150
+    canvas:
+        Color:
+            rgb: 1, 1, 1  # Warna latar putih
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10, 10, 10, 10]  # Sudut melengkung
+    Label:
+        text: ''
+        font_name: "assets/fonts/wawa.ttf"
+        halign: 'center'
+        valign: 'middle'
+        size_hint_y: None
+        # height: self.texture_size[1]
+        font_size: '30sp'
+        color: 225, 225, 225, 1
+
+<OptionLabel>
+    text: ''
+    font_name: "assets/fonts/wawa.ttf"
+    size_hint_y: None
+    font_size: '30sp'
+    color: 225, 225, 225, 1
