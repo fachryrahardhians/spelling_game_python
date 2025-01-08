@@ -1,58 +1,86 @@
-<GamePage>:
+<GamePage@BoxLayout>:
     name: 'game_page'
-    valign: 'center'
-    Image:
-        source: 'assets/backgrounds/taman3.jpg' 
-        allow_stretch: True
-        keep_ratio: False
-    Image:
-        source: 'assets/icons/title_box.png'
-        pos_hint: {'center_x': 0.5, 'center_y': 0.9}   
-        height: 300
-        allow_stretch: False
-        keep_ratio: True      
-    Image:
-        source: 'db/transportasi/mobil.png'
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}   
-        height: 100
-        allow_stretch: False
-        keep_ratio: True          
-    BoxLayout:
-        id: answer_container
-        orientation: 'horizontal'
-        spacing: 30
-        size_hint: 0.9, 0.2
-        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
-    BoxLayout:
-        id: option_container
-        orientation: 'horizontal'
-        spacing: 30
-        size_hint: 0.9, 0.2
-        pos_hint: {'center_x': 0.5, 'center_y': 0.1}           
-        
+    canvas.before:
+        Rectangle:
+            source: 'assets/backgrounds/taman3.jpg'
+            size: self.size
+            pos: self.pos
+    GridLayout:
+        cols: 1
+        rows: 4        
+        Image:
+            source: 'assets/icons/title_box.png'
+            # pos_hint: {'center_x': 0.5, 'center_y': 0.9}   
+            height: 300
+            allow_stretch: False
+            keep_ratio: True      
+        Image:
+            source: 'db/transportasi/mobil.png'
+            pos_hint: {'center_x': 0.5}   
+            size_hint: 0.48, 0.48
+            allow_stretch: True  
+            keep_ratio: True  
+        GridLayout:
+            cols:3
+            Label:
+                text: ''    
+            GridLayout:
+                id: answer_container
+                # orientation: 'horizontal'
+                size_hint: None, None
+                # height: 50
+                spacing: 30
+            Label:
+                text: ''    
+        GridLayout:
+            cols:3
+            Label:
+                text: ''            
+            BoxLayout:
+                id: option_container
+                pos_hint: {'center_x': 0.5}
+                spacing: 30 
+            Label:
+                text: ''        
 
-
-<AnswerBox>:
-    orientation: 'horizontal'
+<RandomAnswer@Button>:    
     size_hint: None, None
-    width: 150
-    height: 150
+    width: 120
+    height: 120
     canvas:
-        Color:
-            rgb: 1, 1, 1  # Warna latar putih
         RoundedRectangle:
             size: self.size
             pos: self.pos
-            radius: [10, 10, 10, 10]  # Sudut melengkung
+            radius: [10, 10, 10, 10] 
     Label:
-        text: ''
+        text: root.label_text
         font_name: "assets/fonts/wawa.ttf"
         halign: 'center'
         valign: 'middle'
-        size_hint_y: None
-        # height: self.texture_size[1]
-        font_size: '30sp'
-        color: 225, 225, 225, 1
+        pos: root.pos
+        font_size: '50sp'
+        color: 0, 0, 0, 1 
+             
+
+
+
+<AnswerBox@Button>:
+    size_hint: None, None
+    width: 120
+    height: 120
+    canvas:
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10, 10, 10, 10] 
+    Label:
+        text: root.label_text
+        font_name: "assets/fonts/wawa.ttf"
+        halign: 'center'
+        valign: 'middle'
+        pos: root.pos
+        font_size: '50sp'
+        color: 0, 0, 0, 1 
 
 <OptionLabel>
     text: ''

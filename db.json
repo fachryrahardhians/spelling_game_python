@@ -1,0 +1,24 @@
+{
+    "transportasi" : [
+        {"nama": "MOBIL", "source": "db/transportasi/mobil.png"},
+        {"nama": "MOTOR", "source": "db/transportasi/motor.png"},
+        {"nama": "DELMAN", "source": "db/transportasi/delman.png"},
+        {"nama": "BEMO", "source": "db/transportasi/bemo.png"},
+        {"nama": "BECAK", "source": "db/transportasi/becak.png"},
+        {"nama": "PESAWAT", "source": "db/transportasi/pesawat.png"},
+        {"nama": "KAPAL", "source": "db/transportasi/kapal.png"},
+        {"nama": "KERETA", "source": "db/transportasi/kereta.png"},
+        {"nama": "SEPEDA", "source": "db/transportasi/sepeda.png"}
+      ],
+    "binatang" : [
+        {"nama": "MONYET", "source": "db/hewan/monyet.png"},
+        {"nama": "KUCING", "source": "db/hewan/kucing.png"},
+        {"nama": "ANJING", "source": "db/hewan/anjing.png"},
+        {"nama": "KAMBING", "source": "db/hewan/kambing.png"},
+        {"nama": "SAPI", "source": "db/hewan/sapi.png"},
+        {"nama": "KUDA", "source": "db/hewan/kuda.png"},
+        {"nama": "BURUNG", "source": "db/hewan/burung.png"},
+        {"nama": "IKAN", "source": "db/hewan/ikan.png"},
+        {"nama": "KELINCI", "source": "db/hewan/kelinci.png"}
+      ]
+}

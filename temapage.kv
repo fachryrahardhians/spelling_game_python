@@ -1,11 +1,11 @@
-<LevelPage>:
-    name: 'level_page'
+<TemaPage>:
+    name: 'tema_page'
     Image:
         source: 'assets/backgrounds/taman1.jpg' 
         allow_stretch: True
         keep_ratio: False
     Image:
-        source: 'assets/icons/level.png'
+        source: 'assets/icons/tema.png'
         pos_hint: {'center_x': 0.5, 'center_y': 0.7}   
         height: 1000
         allow_stretch: False
@@ -20,14 +20,15 @@
             allow_stretch: False
             keep_ratio: True
             pos_hint: {'center_x': 0.5, 'center_y': 0.55}
-            background_normal: 'assets/buttons/level/mudah.png'  
+            background_normal: 'assets/tema/binatang.jpg'  
             border: [0, 0, 0, 0] 
-            on_press: app.root.current = 'tema_page'
+            # on_press: app.root.current = 'game_page'
+            on_press: root.gotoGamePage('binatang')
         Button:
             height: 800
             allow_stretch: False
             keep_ratio: True
             pos_hint: {'center_x': 0.5, 'center_y': 0.55}
-            background_normal: 'assets/buttons/level/sulit.png'  
+            background_normal: 'assets/tema/kendaraan.jpg'  
             border: [1, 1, 1, 1] 
-            on_press: app.root.current = 'tema_page'
+            on_press: root.gotoGamePage('transportasi')
