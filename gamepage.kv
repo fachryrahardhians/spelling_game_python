@@ -15,10 +15,12 @@
             allow_stretch: False
             keep_ratio: True      
         Image:
-            source: 'db/transportasi/mobil.png'
+            id: image_soal
+            # source: 'db/images/angsa.png'
+            source: ''
             pos_hint: {'center_x': 0.5}   
-            size_hint: 0.48, 0.48
-            allow_stretch: True  
+            size_hint: 0.6, 0.6
+            # allow_stretch: True  
             keep_ratio: True  
         GridLayout:
             cols:3
@@ -31,7 +33,7 @@
                 # height: 50
                 spacing: 30
             Label:
-                text: ''    
+                text: ''           
         GridLayout:
             cols:3
             Label:
@@ -60,6 +62,8 @@
         pos: root.pos
         font_size: '50sp'
         color: 0, 0, 0, 1 
+
+
              
 
 
@@ -80,7 +84,7 @@
         valign: 'middle'
         pos: root.pos
         font_size: '50sp'
-        color: 0, 0, 0, 1 
+        color: 0, 50, 0, 1     
 
 <OptionLabel>
     text: ''
