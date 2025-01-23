@@ -4,13 +4,12 @@
         Rectangle:
             source: 'assets/backgrounds/taman3.jpg'
             size: self.size
-            pos: self.pos
+            pos: self.pos           
     GridLayout:
         cols: 1
-        rows: 4        
+        rows: 4           
         Image:
             source: 'assets/icons/title_box.png'
-            # pos_hint: {'center_x': 0.5, 'center_y': 0.9}   
             height: 300
             allow_stretch: False
             keep_ratio: True      
@@ -19,9 +18,11 @@
             # source: 'db/images/angsa.png'
             source: ''
             pos_hint: {'center_x': 0.5}   
-            size_hint: 0.6, 0.6
-            # allow_stretch: True  
+            # size_hint: None, None
+            # size: 450,450
+            # allow_stretch: True
             keep_ratio: True  
+
         GridLayout:
             cols:3
             Label:
@@ -43,7 +44,62 @@
                 pos_hint: {'center_x': 0.5}
                 spacing: 30 
             Label:
-                text: ''        
+                text: ''
+    Label:
+        id: score_label    
+        font_name: "assets/fonts/wawa.ttf"
+        # halign: 'center'
+        # valign: 'middle'
+        # pos: root.pos
+        font_size: '50sp'
+        color: 0, 120, 0, 1   
+        pos_hint: {'center_x': 0.12, 'y': 0.2}
+    Button:
+        size: 150,150
+        size_hint: None, None
+        allow_stretch: False
+        keep_ratio: True
+        pos_hint: {'x': 0.8, 'y': 0.85}
+        background_normal: 'assets/buttons/nav/restart.png'
+        background_down: 'assets/buttons/nav/restart.png'  
+        border: [0, 0, 0, 0]
+        on_press: root.setupSoal()
+    Button:
+        size: 150,150
+        size_hint: None, None
+        allow_stretch: False
+        keep_ratio: True
+        pos_hint: {'x': 0.85, 'y': 0.85}
+        background_normal: 'assets/buttons/nav/skip.png'
+        background_down: 'assets/buttons/nav/skip.png'  
+        border: [0, 0, 0, 0]
+        on_press: root.next_soal()    
+    Button:
+        size: 150,150
+        size_hint: None, None
+        allow_stretch: False
+        keep_ratio: True
+        pos_hint: {'x': 0.9, 'y': 0.85}
+        background_normal: 'assets/buttons/nav/home.png'
+        background_down: 'assets/buttons/nav/home.png'  
+        border: [0, 0, 0, 0]                                
+        on_press: root.go_to_home()                 
+    # Button:
+    #     id: sound_button
+    #     size: 80,80
+    #     size_hint: None, None
+    #     allow_stretch: False
+    #     keep_ratio: True
+    #     pos_hint: {'x': 0.8, 'y': 0.85}
+    #     background_normal: 'assets/buttons/nav/sound.png'
+    #     background_down: 'assets/buttons/nav/sound.png'  
+    #     border: [0, 0, 0, 0]
+    #     on_press: root.setupSoal()
+
+<WinDecoration@Rectangle>
+    source: 'assets/backgrounds/baloons.jpg'
+    size: self.size
+    pos: self.pos 
 
 <RandomAnswer@Button>:    
     size_hint: None, None
@@ -61,10 +117,7 @@
         valign: 'middle'
         pos: root.pos
         font_size: '50sp'
-        color: 0, 0, 0, 1 
-
-
-             
+        color: 0, 0, 0, 1  
 
 
 

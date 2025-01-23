@@ -1,0 +1,29 @@
+<SkorPage>:
+    name: 'score_page'
+    Image:
+        source: 'assets/backgrounds/green_board.jpg' 
+        allow_stretch: True
+        keep_ratio: False
+    Label:
+        text:'Horee, Nilai kamu adalah'
+        font_name: "assets/fonts/wawa.ttf"
+        font_size: '60sp'
+        color: 1, 1, 1, 1           
+        pos_hint: {'center_x': 0.4, 'center_y': 0.82}
+    Label:
+        id: angka_skor
+        text: str(root.skor)
+        font_name: "assets/fonts/wawa.ttf"
+        font_size: '100sp'
+        color: 1, 1, 1, 1           
+        pos_hint: {'center_x': 0.4, 'center_y': 0.6}    
+    Button:
+        size: 150,150
+        size_hint: None, None
+        allow_stretch: False
+        keep_ratio: True
+        pos_hint: {'center_x': 0.9, 'center_y': 0.9}
+        background_normal: 'assets/buttons/nav/home.png'  
+        border: [0, 0, 0, 0] 
+        on_press: app.root.current = 'home_page'
+        
