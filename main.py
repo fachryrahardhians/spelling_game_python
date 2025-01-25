@@ -71,6 +71,7 @@ class LevelPage(Screen):
 
 
 class GamePage(Screen):
+    soal_count = 3
     arg_tema = None 
     arg_level = None
     currentSoalPicture = ""
@@ -115,7 +116,7 @@ class GamePage(Screen):
         self.currentIndexSoal = 0
         random.shuffle(self.currentTheme)
         # SET jumlah soal disini
-        self.currentTheme = self.currentTheme[:10]    
+        self.currentTheme = self.currentTheme[:self.soal_count]    
         print("INISIASI")
         self.setupSoal()
 
@@ -181,17 +182,21 @@ class GamePage(Screen):
             box = RandomAnswer()
             box.label_text = self.currentRandomOptions[x-1] 
             box.on_press = partial(self.hit_answer,x-1)
-            options_container.add_widget(box)        
+            options_container.add_widget(box)
+        fillerWidgets = [self.ids.fillerA,self.ids.fillerB]
+
+        # for filler in range(0,len(fillerWidgets)):
+        #     filler.do_layout()
 
     def next_soal(self):
-        if(self.currentIndexSoal < 9):
+        if(self.currentIndexSoal < (self.soal_count-1)):
             print("GANTI SOAL")
             self.currentIndexSoal = self.currentIndexSoal + 1
             self.setupSoal()
         else:
            print("SELESAI")
            self.play_sound('assets/sounds/yay.mp3')
-        #    self.add_widget(WinDecoration())
+           self.add_widget(WinDecoration())
            Clock.schedule_once(self.go_to_score_page, 2)
             
 
@@ -250,7 +255,7 @@ class AnswerBox(Button):
 class RandomAnswer(Button):
     label_text = StringProperty('');
 
-class WinDecoration(Rectangle):
+class WinDecoration(Image):
     pass
 
 class OptionLabel(Label):

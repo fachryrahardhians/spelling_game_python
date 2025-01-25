@@ -29,22 +29,23 @@
                 text: ''    
             GridLayout:
                 id: answer_container
-                # orientation: 'horizontal'
                 size_hint: None, None
-                # height: 50
                 spacing: 30
             Label:
-                text: ''           
+                text: ''                   
         GridLayout:
             cols:3
-            Label:
-                text: ''            
             BoxLayout:
+                id:fillerA    
+                size_hint_x:1
+            BoxLayout:
+                color: 0,120,0,1
                 id: option_container
                 pos_hint: {'center_x': 0.5}
                 spacing: 30 
-            Label:
-                text: ''
+            BoxLayout:
+                id:fillerB
+                size_hint_x:1
     Label:
         id: score_label    
         font_name: "assets/fonts/wawa.ttf"
@@ -96,8 +97,10 @@
     #     border: [0, 0, 0, 0]
     #     on_press: root.setupSoal()
 
-<WinDecoration@Rectangle>
-    source: 'assets/backgrounds/baloons.jpg'
+<WinDecoration@Image>
+    source: 'assets/backgrounds/party.png'
+    allow_stretch: True
+    keep_ratio: False
     size: self.size
     pos: self.pos 
 
